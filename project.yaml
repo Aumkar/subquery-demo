@@ -19,7 +19,7 @@ network:
   # This endpoint must be a public non-pruned archive node.
   # This is a public node that is rate limited, which will affect indexing speed.
   # When developing your project we strongly suggest getting a private API key.
-  endpoint: "https://osmosis-mainnet-archive.allthatnode.com:26657"
+  endpoint: "https://osmosis.api.onfinality.io/rpc?apikey=b1ffe5e7-3048-4b03-9365-09ad9503ed9c"
   dictionary: "https://api.subquery.network/sq/subquery/cosmos-osmosis-dictionary"
   chainTypes:
     cosmos.slashing.v1beta1:
@@ -57,13 +57,13 @@ dataSources:
         # Using transaction handlers without filters slows your project down as they can be executed with each and every transaction
         - handler: handleTransaction
           kind: cosmos/TransactionHandler
-        - handler: handleEvent
-          kind: cosmos/EventHandler
-          filter:
-            type: execute
-            messageFilter:
-              type: /cosmwasm.wasm.v1.MsgExecuteContract
-        - handler: handleMessage
-          kind: cosmos/MessageHandler
-          filter:
-            type: /cosmwasm.wasm.v1.MsgExecuteContract
+        # - handler: handleEvent
+        #   kind: cosmos/EventHandler
+        #   filter:
+        #     type: execute
+        #     messageFilter:
+        #       type: /cosmwasm.wasm.v1.MsgExecuteContract
+        # - handler: handleMessage
+        #   kind: cosmos/MessageHandler
+        #   filter:
+        #     type: /cosmwasm.wasm.v1.MsgExecuteContract
