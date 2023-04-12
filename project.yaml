@@ -47,23 +47,9 @@ network:
         - MsgSwapExactAmountIn
 dataSources:
   - kind: cosmos/Runtime
-    startBlock: 1
+    startBlock: 8658239
     mapping:
       file: ./dist/index.js
       handlers:
-        # Using block handlers slows your project down as they can be executed with each and every block. Only use if you need to
-        # - handler: handleBlock
-        #   kind: cosmos/BlockHandler
-        # Using transaction handlers without filters slows your project down as they can be executed with each and every transaction
         - handler: handleTransaction
           kind: cosmos/TransactionHandler
-        # - handler: handleEvent
-        #   kind: cosmos/EventHandler
-        #   filter:
-        #     type: execute
-        #     messageFilter:
-        #       type: /cosmwasm.wasm.v1.MsgExecuteContract
-        # - handler: handleMessage
-        #   kind: cosmos/MessageHandler
-        #   filter:
-        #     type: /cosmwasm.wasm.v1.MsgExecuteContract
