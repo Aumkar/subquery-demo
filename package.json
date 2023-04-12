@@ -11,8 +11,8 @@
     "prepack": "rm -rf dist && npm run build",
     "test": "jest"
   },
-  "homepage": "https://github.com/subquery/cosmos-subql-starter",
-  "repository": "github:subquery/cosmos-subql-starter",
+  "homepage": "https://github.com/Aumkar/subquery-demo",
+  "repository": "github:Aumkar/subquery-demo",
   "files": [
     "dist",
     "schema.graphql",
